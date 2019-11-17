@@ -1,0 +1,110 @@
+:root {
+    --carousel-height: 300px;
+}
+
+body {
+    background-color: rgb(210, 224, 241);
+  }
+.container {
+    background-color: rgb(238, 225, 241);
+  }
+  h1 {
+    color: whitesmoke;
+    text-align: center;
+    font-family: 'Dokdo';
+    font-size: 10px;
+    display:inline;
+  }
+  
+  h3 {
+      color: dimgrey !important;
+      padding-top: 50px;
+      padding-left: 350px;
+  }
+
+  h2 {
+      color: rgb(43, 39, 39) !important;
+      text-align: center;
+      padding-top: 20px;
+
+  }
+  p {
+    font-size: 20px;
+  }
+
+  .carousel {
+    width:640px;
+    height: var(--carousel-height);
+    margin: 50px auto 0;
+  }
+
+.w-100{
+    width: 100%!important;
+}
+.d-block{
+    display: block!important;
+}
+
+.img-in-carousel {
+    max-height: var(--carousel-height);
+    background-size: cover;
+}
+
+.card-deck{
+    padding: 75px;
+    width:1100px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.card-btn{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.col-1{
+    width: 15px !important;
+}
+
+.col-2{
+    width: 500px !important;
+}
+
+.col-3{
+    width: 25px !important;
+}
+
+.table-responsive{
+    padding-top: 25px;
+    padding-left: 350px;
+}
+
+.navbar{
+    background-color: #343a40!important;
+    border-radius: 0;
+}
+.affix {
+    top: 0;
+    width: 100%;
+    z-index: 9999 !important;
+  }
+.container-fluid{
+    background-color: #343a40 !important;
+}
+
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+  }

@@ -10,19 +10,19 @@ $('#btn-test').click(function () {
 
 function mainPageCards(i, data){
     $('.card-deck').append($('<div />', {
-        id: 'card-' + i,
+        id: `card-${i}`,
         class: 'card'
     }))
-    $('#card-' + i).append($('<img />', {
-        id: 'imgCard-' + i,
+    $(`#card-${i}`).append($('<img />', {
+        id: `imgCard-${i}`,
         class: 'card-img-top',
         src: './food3.jpg',
         alt: 'card image cap'
     })).append($('<div />', {
-        id: 'cardBody-' + i,
+        id: `cardBody-${i}`,
         class: 'card-body'
     }))
-    $('#cardBody-' + i).append($('<h5 />', {
+    $(`#cardBody-${i}`).append($('<h5 />', {
         class: 'card-title',
         text: data[i]['name']
     })).append($('<p />', {

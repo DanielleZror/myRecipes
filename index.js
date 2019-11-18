@@ -9,4 +9,12 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/public/mainPage.html'));
 });
 
-app.listen(8080);
+app.get('/api/all', function(req, res) {
+    allRecipes = [{"name":"pancakes", "text":"the best pancakes ever"}, {"name":"burger", "text":"so yammm"}, {"name":"pasta", "text":"pasta with pesto"}]
+    res.send(allRecipes)
+
+})
+
+app.listen(8080, function() {
+    console.log("Listening on port " + 8080)
+});

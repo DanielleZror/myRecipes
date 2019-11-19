@@ -11,7 +11,7 @@ app.get('/', function(req, res) {
 
 app.get('/api/all', function(req, res) {
     allRecipes = [{"name":"pancakes", "text":"the best pancakes ever"}, {"name":"burger", "text":"so yammm"}, {"name":"pasta", "text":"pasta with pesto"},
-                  {"name":"pancakes1", "text":"the best pancakes ever"}, {"name":"burger1", "text":"so yammm"}, {"name":"pasta1", "text":"pasta with pesto"}]
+    {"name":"pancakes1", "text":"the best pancakes ever"}, {"name":"burger1", "text":"so yammm"}, {"name":"pasta1", "text":"pasta with pesto"} ]
     res.send(allRecipes)
 
 })

@@ -8,37 +8,42 @@ function allCards(data){
     let Rows = Math.round(data.length/cardsInRow)
     for (let i = 0; i < Rows; i++){
         $('.container').append($('<div />', {
-            id: `row-${i}`,
-            class: 'row'
+            id: `card-deck-${i}`,
+            class: 'card-deck card-deckall'
         }))
         for(let j= i * cardsInRow; j < (i * cardsInRow + cardsInRow) && j < data.length; j++){
-            $(`#row-${i}`).append($('<div />', {
-                id: `col-${j}`,
-                class: 'col-sm-3'
-            }))
-            $(`#col-${j}`).append($('<div />', {
+            $(`#card-deck-${i}`).append($('<div />', {
                 id: `card-${j}`,
                 class: 'card'
             }))
-            $(`#card-${j}`).append($('<img />', {
-                id: `img-${j}`,
-                class: 'card-img-top',
-                src: './food3.jpg',
-                alt: 'Card image cap'
-            })).append($('<div />', {
-                id: `cardBody-${j}`,
-                class: 'card-body'
+            $(`#card-${j}`).append($('<div />',{
+                id: `cardImg-${j}`,
+                class: 'card-img',
+                style: 'background-image:url(./food3.jpg)'
             }))
-            $(`#cardBody-${j}`).append($('<h5 />', {
-                class: 'card-title',
+            $(`#cardImg-${j}`).append($('<div />', {
+                id: `overCard-${j}`,
+                class: 'overlay'
+            }))
+            $(`#overCard-${j}`).append($('<div />', {
+                id: `overContent-${j}`,
+                class: 'overlay-content'
+            }))
+            $(`#overContent-${j}`).append($('<a />', {
+                class: 'hover',
+                href: '#',
+                text: 'View'
+            }))
+            $(`#card-${j}`).append($('<div />', {
+                id: `cardBody-${j}`,
+                class: 'card-body card-body-cascade'
+            }))
+            $(`#cardBody-${j}`).append($('<h4 />', {
+                class: 'font-weight-bold card-title',
                 text: data[j]['name']
             })).append($('<p />', {
                 class: 'card-text',
                 text: data[j]['text']
-            })).append($('<a />', {
-                class: 'btn btn-outline-secondary',
-                text: 'go Somewere',
-                href: '#'
             }))
         }
     }

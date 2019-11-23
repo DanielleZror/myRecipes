@@ -46,3 +46,9 @@ function mainPageCards(i, data){
 
 }
 
+function disableSubmit(){
+    
+    if(sessionStorage.userConnect != "true"){
+        window.location.href = "http://localhost:8080/loginPage.html";
+    }
+}

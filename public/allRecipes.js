@@ -8,11 +8,15 @@ function allCards(data){
     let Rows = Math.round(data.length/cardsInRow)
     for (let i = 0; i < Rows; i++){
         $('.container').append($('<div />', {
-            id: `card-deck-${i}`,
-            class: 'card-deck card-deckall'
+            id: `row-${i}`,
+            class: 'row equal' 
         }))
         for(let j= i * cardsInRow; j < (i * cardsInRow + cardsInRow) && j < data.length; j++){
-            $(`#card-deck-${i}`).append($('<div />', {
+            $(`#row-${i}`).append($('<div />', {
+                id: `col-${j}`,
+                class: 'col-sm-3 d-flex pb-3'
+            }))
+            $(`#col-${j}`).append($('<div />', {
                 id: `card-${j}`,
                 class: 'card'
             }))

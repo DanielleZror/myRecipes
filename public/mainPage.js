@@ -5,9 +5,9 @@
     }
 })
 
-$('#btn-test').click(function () {
+$('#logout').click(function () {
+    sessionStorage.removeItem("userConnect");
 });
-
 
 function mainPageCards(i, data){
     $('.card-deck').append($('<div />', {

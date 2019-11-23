@@ -2,6 +2,9 @@ $.get("api/all", function (data) {
     allCards(data)
 })
 
+$('#logout').click(function () {
+    sessionStorage.removeItem("userConnect");
+});
 
 function allCards(data){
     const cardsInRow = 4

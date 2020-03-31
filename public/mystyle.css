@@ -10,169 +10,39 @@
     --black: #000;
 }
 
-header{
-    height: 6em;
-    width: 100%;
-}
-body {
-    background-color: rgb(210, 224, 241);
-    display: grid;
-  }
-.container {
-    padding-bottom: 7em; 
-  }
-
-.container_login{
-  padding-top: 15em;
-}
-p {
-  font-size: 20px;
-}
-
-.carousel {
-  width:640px;
-  height: var(--carousel-height);
-  margin: 50px auto 0;
-}
-
-.w-100{
-  width: 100%!important;
-}
-.d-block{
-  display: block!important;
-}
-
-.img-in-carousel {
-  max-height: var(--carousel-height);
-  background-size: cover;
-}
-
-.card-deck{
-    padding: 75px;
-    width:100%;
-    margin-right: auto !important;
-    margin-left: auto !important;
-    margin-bottom: 20px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-}
-
-.card-deck .card{
-    flex:none !important;
+ header{
+  padding: 2em;
 } 
 
-.all-btn{
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 80px;
+body {
+    background-color: rgb(210, 224, 241) !important;
+    display: grid;
+    font-family: 'Quicksand', sans-serif;
 }
 
-.navbar{
-    background-color: #343a40!important;
-    border-radius: 0;
+html,
+body,
+header,
+.view {
+  height: 100%;
 }
-.affix {
-    top: 0;
-    width: 100%;
-    z-index: 9999 !important;
+/* @media screen and (max-width: 740px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 100vh;
   }
+} */
 
+/* login page */
 
-* {
-    box-sizing: border-box;
-  }
-  
-  .card {
-    width: 15em;
-    display: inline-block;
-    margin: em;
-    border-radius: 4px;
-    box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-    transition: all .2s ease;
-    background: #fff;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .mainCard {
-      width: 19em;
-  }
-
-  .card-text {
-    word-wrap: break-word;
-    -webkit-line-clamp: 2;
-    overflow : hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-}
-
-  .card:hover, .card.hover {
-    -webkit-transform: translateY(-4px);
-            transform: translateY(-4px);
-    box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.3), 0 0 1px 0 rgba(0, 0, 0, 0.25);
-  }
-  
-  .card:hover .card-img .overlay, .card.hover .card-img .overlay {
-    background-color: rgba(25, 29, 38, 0.85);
-    transition: opacity .2s ease;
-    opacity: 1;
-  }
-  .card-img {
-    position: relative;
-    height: 224px;
-    width: 100%;
-    background-color: #fff;
-    transition: opacity .2s ease;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .card-img .overlay {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    opacity: 0;
-  }
-  .card-img .overlay .overlay-content {
-    line-height: 224px;
-    width: 100%;
-    text-align: center;
-    color: #fff;
-  }
-  .card-img .overlay .overlay-content a {
-    color: #fff;
-    padding: 0 2rem;
-    display: inline-block;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    height: 40px;
-    line-height: 40px;
-    border-radius: 20px;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  .card-img .overlay .overlay-content a:hover, .card-img .overlay .overlay-content a.hover {
-    background: #e1b3eb;
-    border-color: #e1b3eb;
-  }
-  
-  
-.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 2em;
-    line-height: 60px; 
-    background-color: #343a40;
+.container_login{
+  padding-top: 12em;
 }
 
 .user_card {
-  height: 400px;
+  height: 350px;
   width: 350px;
   margin-top: auto;
   margin-bottom: auto;
@@ -204,23 +74,232 @@ p {
   border-radius: 50%;
   border: 2px solid white;
 }
-.form_container {
-  margin-top: 100px;
+
+/* p {
+  font-size: 20px;
+} */
+
+/* carousel */
+.carousel {
+  width:640px;
+  height: var(--carousel-height);
+  margin: 50px auto 0;
 }
 
-.login_btn:focus {
-  box-shadow: none !important;
-  outline: 0px !important;
+.w-100{
+  width: 100%!important;
 }
-.login_container {
+.d-block{
+  display: block!important;
+}
+
+.img-in-carousel {
+  max-height: var(--carousel-height);
+  background-size: cover;
+}
+
+/* cards */
+.card-deck{
+    padding: 75px;
+    width:100%;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    margin-bottom: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.card-deck .card{
+    flex:none !important;
+}  
+
+.card {
+  width: 15em;
+  display: inline-block;
+  margin: em;
+  border-radius: 4px;
+  box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  transition: all .2s ease;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.mainCard {
+    width: 19em;
+}
+
+.card-text {
+  word-wrap: break-word;
+  -webkit-line-clamp: 2;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.card:hover, .card.hover {
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+  box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.3), 0 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.card:hover .card-img .overlay, .card.hover .card-img .overlay {
+  background-color: rgba(25, 29, 38, 0.85);
+  transition: opacity .2s ease;
+  opacity: 1;
+}
+.card-img {
+  position: relative;
+  height: 224px;
+  width: 100%;
+  background-color: #fff;
+  transition: opacity .2s ease;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  
+}
+.card-img .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0;
+}
+.card-img .overlay .overlay-content {
+  line-height: 224px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+.card-img .overlay .overlay-content a {
+  color: #fff;
   padding: 0 2rem;
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  height: 40px;
+  line-height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.card-img .overlay .overlay-content a:hover, .card-img .overlay .overlay-content a.hover {
+  background: #e1b3eb;
+  border-color: #e1b3eb;
 }
 
-.input_user,
-.input_pass:focus {
-  box-shadow: none !important;
-  outline: 0px !important;
+/* all recipies btn*/
+.all-btn{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 80px;
 }
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-  background-color: #e1b3eb !important;
+
+/* navbar */
+.navbar{
+    background-color: #343a40!important;
+    border-radius: 0;
+    padding: 0px !important;
 }
+.affix {
+    top: 0;
+    width: 100%;
+    z-index: 9999 !important;
+  }
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2em;
+    line-height: 60px; 
+    background-color: #343a40;
+}
+
+
+.top-nav-collapse {
+  background-color: #563e91 !important;
+}
+
+/* recipe card */
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+
+.recipe-card {
+	background: #fff;
+	margin: 4em auto;
+	width: 90%;
+	max-width: 650px;
+  }
+
+  .recipe-card aside {
+    position: relative;
+  }
+  .recipe-card aside img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .recipe-card article {
+    padding: 1.25em 1.5em;
+  }
+  .recipe-card article ul {
+    list-style: none;
+    margin: 0.5em 0 0;
+    padding: 0;
+  }
+  .recipe-card article ul li {
+    display: inline-block;
+    margin-left: 1em;
+    line-height: 1em;
+  }
+  
+
+    span {
+      margin-left: 0.5em;
+      font-size: 0.8em;
+      font-weight: 300;
+      vertical-align: middle;
+      color: #838689;
+    }
+
+    h2,
+		h3 {
+			margin: 0;
+			font-weight: 300;
+    }
+    
+    h2 {
+			font-size: em(28);
+			color: #222222;
+		}
+
+		h3 {
+			font-size: em(15);
+			color: #838689;
+		}
+    p {
+			margin: 1.25em 0;
+			font-size: em(13);
+			font-weight: 400;
+      color: #222222;
+    }
+
+    .ingredients {
+			margin: 2em 0 0.5em;
+		}

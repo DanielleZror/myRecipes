@@ -15,6 +15,7 @@ app.get('/api/all', function(req, res) {
     res.send(allRecipes)
 
 })
+    
 
 app.listen(8080, function() {
     console.log("Listening on port " + 8080)

@@ -29,7 +29,7 @@ function mainPageCards(i, data){
     }))
     $(`#overContent-${i}`).append($('<a />', {
         class: 'hover',
-        href: '#',
+        href: 'oneRecipe.html',
         text: 'View'
     }))
     $(`#card-${i}`).append($('<div />', {

@@ -15,37 +15,38 @@ function allCards(data){
             class: 'row equal' 
         }))
         for(let j= i * cardsInRow; j < (i * cardsInRow + cardsInRow) && j < data.length; j++){
+            var id_number = data[j]['id'];
             $(`#row-${i}`).append($('<div />', {
                 id: `col-${j}`,
                 class: 'col-sm-3 d-flex pb-3'
             }))
             $(`#col-${j}`).append($('<div />', {
-                id: `card-${j}`,
+                id: `card-${id_number}`,
                 class: 'card'
             }))
-            $(`#card-${j}`).append($('<div />',{
-                id: `cardImg-${j}`,
+            $(`#card-${id_number}`).append($('<div />',{
+                id: `cardImg-${id_number}`,
                 class: 'card-img',
                 style: 'background-image:url(./food3.jpg)'
             }))
-            $(`#cardImg-${j}`).append($('<div />', {
-                id: `overCard-${j}`,
+            $(`#cardImg-${id_number}`).append($('<div />', {
+                id: `overCard-${id_number}`,
                 class: 'overlay'
             }))
-            $(`#overCard-${j}`).append($('<div />', {
-                id: `overContent-${j}`,
+            $(`#overCard-${id_number}`).append($('<div />', {
+                id: `overContent-${id_number}`,
                 class: 'overlay-content'
             }))
-            $(`#overContent-${j}`).append($('<a />', {
+            $(`#overContent-${id_number}`).append($('<a />', {
                 class: 'hover',
-                href: '#',
+                href: 'oneRecipe.html' + '#' + id_number,
                 text: 'View'
             }))
-            $(`#card-${j}`).append($('<div />', {
-                id: `cardBody-${j}`,
+            $(`#card-${id_number}`).append($('<div />', {
+                id: `cardBody-${id_number}`,
                 class: 'card-body card-body-cascade'
             }))
-            $(`#cardBody-${j}`).append($('<h4 />', {
+            $(`#cardBody-${id_number}`).append($('<h4 />', {
                 class: 'font-weight-bold card-title',
                 text: data[j]['name']
             })).append($('<p />', {

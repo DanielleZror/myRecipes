@@ -10,33 +10,34 @@ $('#logout').click(function () {
 });
 
 function mainPageCards(i, data){
+    var id_number = data[i]['id'];
     $('.card-deck').append($('<div />', {
-        id: `card-${i}`,
+        id: `card-${id_number}`,
         class: 'card mainCard' 
     }))
-    $(`#card-${i}`).append($('<div />',{
-        id: `cardImg-${i}`,
+    $(`#card-${id_number}`).append($('<div />',{
+        id: `cardImg-${id_number}`,
         class: 'card-img',
         style: 'background-image:url(./food3.jpg)'
     }))
-    $(`#cardImg-${i}`).append($('<div />', {
-        id: `overCard-${i}`,
+    $(`#cardImg-${id_number}`).append($('<div />', {
+        id: `overCard-${id_number}`,
         class: 'overlay'
     }))
-    $(`#overCard-${i}`).append($('<div />', {
-        id: `overContent-${i}`,
+    $(`#overCard-${id_number}`).append($('<div />', {
+        id: `overContent-${id_number}`,
         class: 'overlay-content'
     }))
-    $(`#overContent-${i}`).append($('<a />', {
+    $(`#overContent-${id_number}`).append($('<a />', {
         class: 'hover',
-        href: 'oneRecipe.html',
+        href: 'oneRecipe.html' + '#' + id_number,
         text: 'View'
     }))
-    $(`#card-${i}`).append($('<div />', {
-        id: `cardBody-${i}`,
+    $(`#card-${id_number}`).append($('<div />', {
+        id: `cardBody-${id_number}`,
         class: 'card-body card-body-cascade'
     }))
-    $(`#cardBody-${i}`).append($('<h4 />', {
+    $(`#cardBody-${id_number}`).append($('<h4 />', {
         class: 'font-weight-bold card-title',
         text: data[i]['name']
     })).append($('<p />', {

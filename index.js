@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
 var path = require('path');
+var MongoClient = require('mongodb').MongoClient;
+var uri = 'mongodb://localhost:27017/recipes';
 
 app.use(express.static('public'))
 
@@ -10,20 +12,42 @@ app.get('/', function(req, res) {
 });
 
 app.get('/api/all', function (req, res) {
-    res.send(getAllRecipes());
+    MongoClient.connect(uri, function(err, db) {
+        if(!err) {
+            console.log("connected");
+            var dbo = db.db("recipes");
+            dbo.collection("recipes").find({}).toArray(function(err, result) {
+                if (err) throw err;
+                console.log(result);
+                res.send(result)
+                db.close();
+            });
+            MongoClient.close;    
+            }
+        });
 })
-
+function collect
 app.get('/api/byID', function(req, res) {
-    let data = getAllRecipes() 
-    res.send(data.find(x => x.id === req.query.id))
+    MongoClient.connect("mongodb://localhost:27017/recipes", function(err, db) {
+    if(!err) {
+        console.log("connected");
+        var dbo = db.db("recipes");
+        var query = { id: req.query.id };
+        dbo.collection("recipes").find(query).toArray(function(err, result) {
+            if (err) throw err;
+            console.log(result);
+            res.send(result[0])
+            db.close();
+        });
+        MongoClient.close;    
+        }
+    });
 })
 
-function getAllRecipes(){
-    let allRecipes = [{'id':'1', 'name':'pancakes', 'text':'the best pancakes ever'}, {'id':'12', 'name':'burger', 'text':'so yammm'}, {'id':'3', 'name':'pasta', 'text':'pasta with pesto'},
-    {'id':'4', 'name':'pancakes1', 'text':'the best pancakes ever'}, {'id':'5', 'name':'burger1', 'text':'so yammm'}, {'id':'63', 'name':'pasta1', 'text':'pasta with pesto'} ]
-    return allRecipes;
-}
 
 app.listen(8080, function() {
     console.log("Listening on port " + 8080)
 });
+
+
+

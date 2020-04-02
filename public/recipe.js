@@ -47,6 +47,7 @@ function specipicRecipe(data){
     $("#article").append($('<p />', {
         class: 'ingredients'
     }))
+    $('.ingredients').append($('<p> Ingredients: </p>'))
     $('.ingredients').append($('<span />',{
         id: 'ingredients'
     }))

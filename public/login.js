@@ -25,8 +25,6 @@ function HandleGoogleApiLibrary() {
 	});
 }
 
-
-
 // Call login API on a click event
 $("#google-button").on('click', function() {
 	// API call for Google login

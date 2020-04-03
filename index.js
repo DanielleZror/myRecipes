@@ -1,10 +1,15 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 var path = require('path');
 var MongoClient = require('mongodb').MongoClient;
 var uri = 'mongodb://localhost:27017/recipes';
 
 app.use(express.static('public'))
+app.use( bodyParser.json() ); 
+app.use(bodyParser.urlencoded({     
+    extended: true
+  })); 
 
 // viewed at http://localhost:8080
 app.get('/', function(req, res) {
@@ -28,8 +33,9 @@ app.get('/api/byID', function(req, res) {
 })
 
 app.post('/api/add', function(req) {
-    var document = { id: '4', name: 'pizza', text: 'ext text'}
-    addToDB(document)
+   // var document = { id: '4', name: 'pizza', text: 'ext text'}
+   console.log(req.body)
+    addToDB(req.body)
 })
 
 app.listen(8080, function() {

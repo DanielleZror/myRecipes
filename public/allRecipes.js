@@ -1,10 +1,6 @@
 $.get("api/all", function (data) {
     allCards(data)
 })
-// $.post('/api/add',function (data){
-//     console.log("hi")
-// })
-
 
 $('#logout').click(function () {
     sessionStorage.removeItem("userConnect");

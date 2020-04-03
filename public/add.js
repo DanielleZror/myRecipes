@@ -1,58 +1,29 @@
-var id_number = {'id': window.location.hash.substring(1)};
+var addCard = {}
 
+$('#Img').on('change',function(){
+    //get the file name
+    var fileName = $('#Img')[0].files[0].name;
 
-
-$.get("/api/byID",id_number, function (data) {
-    specipicRecipe(data)
+    //replace the "Choose a file" label
+    $('#photo').text(fileName);
 })
 
+$('#saveBtn').click(function() {
+    console.log("here")
+    creatNewRecipe()
+    $.post('/api/add',addCard, function (){
+    console.log(addCard)
+})
+})
 
-function specipicRecipe(data){
-    $('.recipe-card').append($('<aside />', {
-        id: `card-${data["id"]}`
-    })).append($('<img />', {
-        src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/oatmeal.jpg",
-        alt: data["name"]
-    }))
-    $('.recipe-card').append($('<article />',{
-        id: 'article'
-    }))
-    $("#article").append($('<h2 />',{
-        id: 'name',
-        text: data["name"]
-    }))
-    $("#article").append($('<h3 />',{
-        id: 'text',
-        text: data["text"]
-    }))
-    
-    $('#article').append($('<ul />',{
-        id: 'paragraf'
-    }))
-    $("#paragraf").append($('<li />', {
-        id: 'icon'
-    }))
-    $("#icon").append($('<i />', {
-        class: "fas fa-clock"
-    }))
-    $("#paragraf").append($('<span />', {
-        id: 'time'
-    }))
-    $("#time").append("15 min")
-
-    $("#article").append($('<p />', {
-        id: 'preparation'
-    }))
-    $("#preparation").append(data["text"])
-    $("#article").append($('<p />', {
-        class: 'ingredients'
-    }))
-    $('.ingredients').append($('<p> Ingredients: </p>'))
-    $('.ingredients').append($('<span />',{
-        id: 'ingredients'
-    }))
-    $("#ingredients").append("ilk, salt, coriander, cardamom, cinnamon, turmeric, honey")
-
+function creatNewRecipe(){
+    addCard = {
+        id: '51',
+        Name: $('#Name').val(),
+        Description: $('#Description').val(),
+        TimeHours: $('#Hours').val(),
+        TimeMinutes: $('#Minutes').val(),
+        Preparation: $('#Preparation').val()}
 }
 
 

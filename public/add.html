@@ -11,28 +11,28 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-md fixed-top navbar-dark">
-                <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-                    <a class="navbar-brand" href="mainPage.html">
-                        <img src=".\logo.png" width="55" height="55" class="d-inline-block align-top" alt="">
+        <nav class='navbar navbar-expand-md fixed-top navbar-dark'>
+                <div class='navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2'>
+                    <a class='navbar-brand' href='mainPage.html'>
+                        <img src='.\logo.png' width='55' height='55' class='d-inline-block align-top' alt=''>
                     </a>
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="mainPage.html">Home</a>
+                    <ul class='navbar-nav mr-auto'>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='mainPage.html'>Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="all.html">All my recipes</a>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='all.html'>All my recipes</a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="add.html">Add</a>
+                        <li class='nav-item active'>
+                            <a class='nav-link' href='add.html'>Add</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='#'>Link</a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a id="logout" class="nav-link" href="loginPage.html">logOut</a>
+                    <ul class='navbar-nav ml-auto'>
+                        <li class='nav-item'>
+                            <a id='logout' class='nav-link' href='loginPage.html'>logOut</a>
                         </li>
                     </ul>
                 </div>
@@ -40,56 +40,116 @@
             
     </header>
 
-    <div id="accordion">
-        <div class="card">
-          <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
-              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Collapsible Group Item #1
-              </button>
-            </h5>
+<!-- Grid row -->
+<div class='row accordion-gradient-bcg d-flex justify-content-center'>
+
+    <!-- Grid column -->
+    <div class='col-md-10 col-xl-6 py-5'>
+  
+      <!--Accordion wrapper-->
+      <div class='accordion md-accordion accordion-2' id='accordionEx7' role='tablist'
+        aria-multiselectable='true'>
+  
+        <!-- Accordion card -->
+        <div class='card addcard'>
+  
+          <!-- Card header -->
+          <div class='card-header rgba-stylish-strong z-depth-1 mb-1' role='tab' id='heading1'>
+            <a data-toggle='collapse' data-parent='#accordionEx7' href='#collapse1' aria-expanded='true'
+              aria-controls='collapse1'>
+              <h5 class='mb-0 white-text font-thin'>
+                Tell me about the new recipe! <i class='fas fa-angle-down rotate-icon'></i>
+              </h5>
+            </a>
           </div>
-      
-          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-            <div class="card-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+  
+          <!-- Card body -->
+          <div id='collapse1' class='collapse show' role='tabpanel' aria-labelledby='heading1' data-parent='#accordionEx7'>
+            <div class='card-body mb-1'>
+                <form>
+                    <input type='text' class='form-control mb-2 mr-sm-2' id='Name' placeholder="The recipe's name">
+                    <textarea type='text' class='form-control mb-2 mr-sm-2' id='Description' placeholder='Write a short description'></textarea> </textarea>
+                    <div class='form-row'>
+                        <div class='form-group col-md-4'>  
+                          <input id='Hours' name='h' type='number' class='form-control mb-2 mr-sm-2' min='0' max='24' placeholder='Hours'>
+                        </div>
+                        <div class='form-group col-md-4'>
+                          <input id='Minutes' name='m' type='number' class='form-control mb-2 mr-sm-2' min='0' max='59' placeholder='Minutes'>
+                        </div>
+                      </div>
+                    <div class='custom-file' id='myfile'>
+                        <input type='file' class='form-control custom-file-input' id='Img' >
+                        <label class='custom-file-label' id= 'photo' for='Img' s>Choose a photo</label>
+                      </div>
+                </form>
             </div>
           </div>
         </div>
-        <div class="card">
-          <div class="card-header" id="headingTwo">
-            <h5 class="mb-0">
-              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Collapsible Group Item #2
-              </button>
-            </h5>
+        <!-- Accordion card -->
+  
+        <!-- Accordion card -->
+        <div class='card addcard'>
+  
+          <!-- Card header -->
+          <div class='card-header rgba-stylish-strong z-depth-1 mb-1' role='tab' id='heading2'>
+            <a class='collapsed' data-toggle='collapse' data-parent='#accordionEx7' href='#collapse2'
+              aria-expanded='false' aria-controls='collapse2'>
+              <h5 class='mb-0 white-text font-thin'>
+                Ingredients <i class='fas fa-angle-down rotate-icon'></i>
+              </h5>
+            </a>
           </div>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-            <div class="card-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+  
+          <!-- Card body -->
+          <div id='collapse2' class='collapse' role='tabpanel' aria-labelledby='heading2'
+            data-parent='#accordionEx7'>
+            <div class='card-body mb-1 rgba-grey-light white-text'>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
           </div>
         </div>
-        <div class="card">
-          <div class="card-header" id="headingThree">
-            <h5 class="mb-0">
-              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Collapsible Group Item #3
-              </button>
-            </h5>
+        <!-- Accordion card -->
+  
+        <!-- Accordion card -->
+        <div class='card addcard'>
+  
+          <!-- Card header -->
+          <div class='card-header rgba-stylish-strong z-depth-1 mb-1' role='tab' id='heading3'>
+            <a class='collapsed' data-toggle='collapse' data-parent='#accordionEx7' href='#collapse3'
+              aria-expanded='false' aria-controls='collapse3'>
+              <h5 class='mb-0 white-text font-thin'>
+                Preparation method <i class='fas fa-angle-down rotate-icon'></i>
+              </h5>
+            </a>
           </div>
-          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-            <div class="card-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+  
+          <!-- Card body -->
+          <div id='collapse3' class='collapse' role='tabpanel' aria-labelledby='heading3' data-parent='#accordionEx7'>
+            <div class='card-body mb-1'>
+                <form>
+                    <textarea type='text' class='form-control mb-2 mr-sm-2' id='Preparation' placeholder='Write the preparation method' rows='6'></textarea> </textarea>
+                    <div class='save-btn'>
+                        <button id='saveBtn' type='button' class='btn btn-outline-secondary'><span class="fas fa-save fa-lg mr-3"></span>Save</button></a>
+                    </div>
+                </form>
             </div>
           </div>
         </div>
+        <!-- Accordion card -->
       </div>
+      <!--/.Accordion wrapper-->
+  
+    </div>
+    <!-- Grid column -->
+  
+  </div>
+  <!-- Grid row -->
 
-<!-- <div class="recipe-card">
-</div> -->
-
-<div class="footer">
+<div class='footer'>
 </div>
     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

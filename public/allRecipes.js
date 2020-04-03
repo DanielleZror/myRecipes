@@ -1,6 +1,10 @@
 $.get("api/all", function (data) {
     allCards(data)
 })
+// $.post('/api/add',function (data){
+//     console.log("hi")
+// })
+
 
 $('#logout').click(function () {
     sessionStorage.removeItem("userConnect");
@@ -8,7 +12,7 @@ $('#logout').click(function () {
 
 function allCards(data){
     const cardsInRow = 4
-    let Rows = Math.round(data.length/cardsInRow)
+    let Rows = Math.ceil(data.length/cardsInRow)
     for (let i = 0; i < Rows; i++){
         $('.container').append($('<div />', {
             id: `row-${i}`,

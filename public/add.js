@@ -1,4 +1,5 @@
 var addCard = {}
+$('#userName').text(sessionStorage.userName);
 
 $('#Img').on('change',function(){
     //get the file name
@@ -9,22 +10,30 @@ $('#Img').on('change',function(){
 })
 
 $('#saveBtn').click(function() {
-    console.log("here")
     creatNewRecipe()
-    $.post('/api/add',addCard, function (){
-    console.log(addCard)
-})
 })
 
 function creatNewRecipe(){
-    addCard = {
-        id: '51',
-        Name: $('#Name').val(),
-        Description: $('#Description').val(),
-        TimeHours: $('#Hours').val(),
-        TimeMinutes: $('#Minutes').val(),
-        Preparation: $('#Preparation').val()}
+    var file = $('#Img')[0].files[0];
+    var reader = new FileReader();
+    var img;
+    reader.onload = function (e) {
+        img =  (e.target.result).toString('base64')
+        addCard = {
+            id: '153',
+            Name: $('#Name').val(),
+            Description: $('#Description').val(),
+            TimeHours: $('#Hours').val(),
+            TimeMinutes: $('#Minutes').val(),
+            Preparation: $('#Preparation').val(),
+            Img: img
+        }
+        $.post('/api/add',addCard, function (){
+            console.log(addCard)
+        })
+
+    };
+    reader.readAsDataURL(file);
+
+    
 }
-
-
-

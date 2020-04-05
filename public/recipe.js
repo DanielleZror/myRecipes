@@ -8,10 +8,11 @@ $.get("/api/byID",id_number, function (data) {
 
 
 function specipicRecipe(data){
+    $('#userName').text(sessionStorage.userName);
     $('.recipe-card').append($('<aside />', {
         id: `card-${data["id"]}`
     })).append($('<img />', {
-        src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/oatmeal.jpg",
+        src: data["Img"],
         alt: data["Name"]
     }))
     $('.recipe-card').append($('<article />',{

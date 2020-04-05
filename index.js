@@ -4,12 +4,16 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var MongoClient = require('mongodb').MongoClient;
 var uri = 'mongodb://localhost:27017/recipes';
+const assert = require('assert');
+const fs = require('fs');
 
 app.use(express.static('public'))
 app.use( bodyParser.json() ); 
 app.use(bodyParser.urlencoded({     
-    extended: true
+    extended: true,
+    limit: '50mb'
   })); 
+
 
 // viewed at http://localhost:8080
 app.get('/', function(req, res) {
@@ -33,7 +37,6 @@ app.get('/api/byID', function(req, res) {
 })
 
 app.post('/api/add', function(req) {
-   // var document = { id: '4', name: 'pizza', text: 'ext text'}
    console.log(req.body)
     addToDB(req.body)
 })
@@ -73,3 +76,7 @@ function addToDB(document){
         })
     }
 }
+
+
+
+ 

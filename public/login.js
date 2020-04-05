@@ -33,7 +33,9 @@ $("#google-button").on('click', function() {
             // Login API call is successful
             console.log("success");
             window.location.href = "http://localhost:8080/mainPage.html";
-            sessionStorage.setItem("userConnect", true);
+			sessionStorage.setItem("userConnect", true);
+			sessionStorage.setItem("userName", gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile().getName());
+			sessionStorage.setItem("userID", gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile().getId());
 		},
 		function(error) {
 			// Error occurred

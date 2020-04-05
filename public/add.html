@@ -50,7 +50,7 @@
     <div class='col-md-10 col-xl-6 py-5'>
   
       <!--Accordion wrapper-->
-      <div class='accordion md-accordion accordion-2' id='accordionEx7' role='tablist'
+      <div class='accordion md-accordion accordion-2' id='accordionWrapper' role='tablist'
         aria-multiselectable='true'>
   
         <!-- Accordion card -->
@@ -58,7 +58,7 @@
   
           <!-- Card header -->
           <div class='card-header rgba-stylish-strong z-depth-1 mb-1' role='tab' id='heading1'>
-            <a data-toggle='collapse' data-parent='#accordionEx7' href='#collapse1' aria-expanded='true'
+            <a data-toggle='collapse' data-parent='#accordionWrapper' href='#collapse1' aria-expanded='true'
               aria-controls='collapse1'>
               <h5 class='mb-0 white-text font-thin'>
                 Tell me about the new recipe! <i class='fas fa-angle-down rotate-icon'></i>
@@ -67,7 +67,7 @@
           </div>
   
           <!-- Card body -->
-          <div id='collapse1' class='collapse show' role='tabpanel' aria-labelledby='heading1' data-parent='#accordionEx7'>
+          <div id='collapse1' class='collapse show' role='tabpanel' aria-labelledby='heading1' data-parent='#accordionWrapper'>
             <div class='card-body mb-1'>
                 <form>
                     <input type='text' class='form-control mb-2 mr-sm-2' id='Name' placeholder="The recipe's name">
@@ -88,14 +88,14 @@
             </div>
           </div>
         </div>
-        <!-- Accordion card -->
+        
   
         <!-- Accordion card -->
         <div class='card addcard'>
   
           <!-- Card header -->
           <div class='card-header rgba-stylish-strong z-depth-1 mb-1' role='tab' id='heading2'>
-            <a class='collapsed' data-toggle='collapse' data-parent='#accordionEx7' href='#collapse2'
+            <a class='collapsed' data-toggle='collapse' data-parent='#accordionWrapper' href='#collapse2'
               aria-expanded='false' aria-controls='collapse2'>
               <h5 class='mb-0 white-text font-thin'>
                 Ingredients <i class='fas fa-angle-down rotate-icon'></i>
@@ -104,25 +104,39 @@
           </div>
   
           <!-- Card body -->
-          <div id='collapse2' class='collapse' role='tabpanel' aria-labelledby='heading2'
-            data-parent='#accordionEx7'>
+          <div id='collapse2' class='collapse' role='tabpanel' aria-labelledby='heading2' data-parent='#accordionWrapper'>
             <div class='card-body mb-1 rgba-grey-light white-text'>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <form method="post" action="">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div id="inputFormRow" >
+                            <div class="input-group mb-3 group " id="group-0">
+                                <input type="number" id="amount-0" class="form-control m-input" placeholder="Amount" autocomplete="off" step="0.25" min="0" max="1000">
+                                <input type="text" id="unit-0" class="form-control m-input" placeholder="Unit" autocomplete="off">
+                                <input type="text" id="item-0" class="form-control m-input" placeholder="Item" autocomplete="off">
+                                <div class="input-group-append">
+                                    <button id="removeRow" type="button" class="btn btn-danger remove">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div id="addBtn" class="btninCenter">
+                          <button id="addRow" type="button" class="btn btn-outline-secondary">Add Row</button>
+                        </div>    
+                    </div>
+                </div>
+            </form>
             </div>
           </div>
         </div>
-        <!-- Accordion card -->
+        
   
         <!-- Accordion card -->
         <div class='card addcard'>
   
           <!-- Card header -->
           <div class='card-header rgba-stylish-strong z-depth-1 mb-1' role='tab' id='heading3'>
-            <a class='collapsed' data-toggle='collapse' data-parent='#accordionEx7' href='#collapse3'
+            <a class='collapsed' data-toggle='collapse' data-parent='#accordionWrapper' href='#collapse3'
               aria-expanded='false' aria-controls='collapse3'>
               <h5 class='mb-0 white-text font-thin'>
                 Preparation method <i class='fas fa-angle-down rotate-icon'></i>
@@ -131,21 +145,21 @@
           </div>
   
           <!-- Card body -->
-          <div id='collapse3' class='collapse' role='tabpanel' aria-labelledby='heading3' data-parent='#accordionEx7'>
+          <div id='collapse3' class='collapse' role='tabpanel' aria-labelledby='heading3' data-parent='#accordionWrapper'>
             <div class='card-body mb-1'>
                 <form>
                     <textarea type='text' class='form-control mb-2 mr-sm-2' id='Preparation' placeholder='Write the preparation method' rows='6'></textarea> </textarea>
                     <div class='save-btn'>
-                        <button id='saveBtn' type='button' class='btn btn-outline-secondary'><span class="fas fa-save fa-lg mr-3"></span>Save</button></a>
+                        <button id='saveBtn' type='button' class='btn btn-outline-secondary'><span class="far fa-save fa-lg mr-3"></span>Save</button></a>
                     </div>
                 </form>
             </div>
           </div>
         </div>
-        <!-- Accordion card -->
+        
       </div>
       <!--/.Accordion wrapper-->
-  
+      
     </div>
     <!-- Grid column -->
   

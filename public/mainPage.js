@@ -1,6 +1,8 @@
 var exsits = false;
+var user_id = {'userID': sessionStorage.userID}
 
- $.get("api/all", function (data) {
+ $.get("api/all",user_id, function (data) {
+    $('#userName').text(sessionStorage.userName);
       const maxCard = 3
     for (var i = 0; i < data.length && i < maxCard; i++) {
         mainPageCards(i,data)
@@ -93,7 +95,6 @@ function carouselInner(j, data){
 
 
 function mainPageCards(i, data){
-    $('#userName').text(sessionStorage.userName);
     var id_number = data[i]['id'];
     $('.card-deck').append($('<div />', {
         id: `card-${id_number}`,

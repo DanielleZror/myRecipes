@@ -6,6 +6,7 @@ var MongoClient = require('mongodb').MongoClient;
 var uri = 'mongodb://localhost:27017/recipes';
 const assert = require('assert');
 const fs = require('fs');
+let mydb 
 
 app.use(express.static('public'))
 app.use( bodyParser.json() ); 
@@ -21,15 +22,16 @@ app.get('/', function(req, res) {
 });
 
 app.get('/api/all', function (req, res) {
-    var query = { };
+    var query = {userID: req.query.userID};
     selectFromDB(sendRes, query);
     function sendRes(result){
+        console.log(result)
         res.send(result);
     }
 })
 
 app.get('/api/byID', function(req, res) {
-    var query = { id: req.query.id };
+    var query = { id: req.query.id, userID: req.query.userID};
     selectFromDB(sendRes, query);
     function sendRes(result){
         res.send(result[0]);
@@ -49,12 +51,18 @@ function connectToDB(callback){
     MongoClient.connect(uri, function(err, db) {
         if(!err) {
             console.log("connected");
-            var dbo = db.db("recipes");
+            mydb = db
+            dbo = db.db("recipes");
             callback(dbo.collection("recipes"))
-            db.close();
-            MongoClient.close;    
             }
-        });
+        })
+}
+
+function closeConnction(){
+    if(mydb){
+        mydb.close();
+        MongoClient.close;
+    }
 }
 
 function selectFromDB(callback, query){
@@ -63,6 +71,7 @@ function selectFromDB(callback, query){
         collection.find(query).toArray(function(err, result) {
             if (err) throw err;
             callback(result)
+            closeConnction()
         })
     }
 }
@@ -73,6 +82,7 @@ function addToDB(document){
         collection.insertOne(document, function(err, result) {
             if (err) throw err;
             console.log(result)
+            closeConnction()
         })
     }
 }

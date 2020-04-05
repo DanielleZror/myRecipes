@@ -1,8 +1,8 @@
 var id_number = {'id': window.location.hash.substring(1)};
+var query = {'id': window.location.hash.substring(1), 'userID': sessionStorage.userID };
 
 
-
-$.get("/api/byID",id_number, function (data) {
+$.get("/api/byID",query, function (data) {
     specipicRecipe(data)
 })
 
@@ -49,11 +49,7 @@ function specipicRecipe(data){
         class: 'ingredients '
     }))
     $('.ingredients').append($('<p> Ingredients: </p>'))
-    $('.ingredients').append($('<span />',{
-        id: 'ingredients'
-    }))
-    $("#ingredients").append("ilk, salt, coriander, cardamom, cinnamon, turmeric, honey")
-
+    Ingredients(data)
     $("#article").append($('<p />', {
         class: 'preparation'
     }))
@@ -62,8 +58,17 @@ function specipicRecipe(data){
         id: 'preparation'
     }))
     $("#preparation").append(data["Preparation"])
-
-
 }
 
+function Ingredients(data){
+    for (let i = 0; i < data["Ingredients"].length ; i++){
+        var ingredientsLineData = data["Ingredients"][i]["Amount"] + " " + data["Ingredients"][i]["Unit"] + " " + data["Ingredients"][i]["Item"]
+        $(".ingredients").append($('<spanIng />', {
+            id: 'ingredientsLineData',
+            text: ingredientsLineData
+        }))
+       
+
+    }
+}
 

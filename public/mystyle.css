@@ -1,3 +1,5 @@
+
+
 :root {
     --carousel-height: 300px;
     --headlinesFont: 'Josefin Sans', sans-serif;
@@ -200,6 +202,12 @@ header,
   justify-content: center;
 }
 
+.btninCenter{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 /* navbar */
 .navbar{
     background-color: #343a40!important;
@@ -274,6 +282,7 @@ img {
       font-weight: 300;
       vertical-align: middle;
       color: #838689;
+      font-family:  'Comic Neue', cursive !important;
     }
 
     TimeSpan{
@@ -282,29 +291,52 @@ img {
       font-weight: 300;
       vertical-align: middle;
       color: #838689;
+      font-family:  'Comic Neue', cursive !important;
+    }
+
+    spanIng{
+      display: block;
+      margin-left: 0.5em;
+      font-size: 1em;
+      font-weight: 300;
+      color: #838689;
+      font-family:  'Comic Neue', cursive !important;
     }
 
     h2,
 		h3 {
       margin: 0;
       margin-bottom: 0.6em !important;
+      text-align: center;
     }
     
+    a{
+      font-family:  'Comic Neue', cursive !important;
+    }
+
     h2 {
       font-size: 2.5em !important;
       font-weight: 900 !important;
-			color: #222222 !important;
+      color: #222222 !important;
+      font-family:  'Comic Neue', cursive !important;
 		}
 
 		h3 {
-			font-size: 1/75em !important;
-			color: #838689 !important;
-		}
+			font-size: 1.25em !important;
+      color: #838689 !important;
+      font-family: 'Comic Neue', cursive !important;
+    }
+    
+    h4, h5 {
+      font-family: 'Comic Neue', cursive !important;
+    }
+
     p {
 			margin: 1.25em 0;
 			font-size: 1.15em;
 			font-weight: 400;
       color: #222222;
+      font-family:  'Comic Neue', cursive !important;
     }
 
     .ingredients {

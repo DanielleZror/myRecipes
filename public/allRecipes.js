@@ -1,4 +1,6 @@
-$.get("api/all", function (data) {
+var user_id = {'userID': sessionStorage.userID}
+
+$.get("api/all", user_id , function (data) {
     $('#userName').text(sessionStorage.userName);
     allCards(data)
 })
@@ -28,7 +30,7 @@ function allCards(data){
             $(`#card-${id_number}`).append($('<div />',{
                 id: `cardImg-${id_number}`,
                 class: 'card-img',
-                style: `background-image:url(${data[i]['Img']})`
+                style: `background-image:url(${data[j]['Img']})`
             }))
             $(`#cardImg-${id_number}`).append($('<div />', {
                 id: `overCard-${id_number}`,

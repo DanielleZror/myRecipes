@@ -15,7 +15,7 @@ $('#Img').on('change',function(){
 $('#saveBtn').click(function() {
     IngredientsList()
     creatNewRecipe()
- //   window.location.href = `./oneRecipe.html#${id}.html`;
+    showRecipePage('33')
 
 })
 
@@ -109,3 +109,4 @@ $("#addRow").click(function () {
         $(this).parents('.group').remove();
     });
 
+//# sourceURL=add.js

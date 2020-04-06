@@ -115,7 +115,7 @@ function mainPageCards(i, data){
     }))
     $(`#overContent-${id_number}`).append($('<a />', {
         class: 'hover',
-        onclick: `onViewClick(${id_number})`,
+        onclick: `showRecipePage(${id_number})`,
         text: 'View'
     }))
     $(`#card-${id_number}`).append($('<div />', {

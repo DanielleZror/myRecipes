@@ -1,18 +1,22 @@
-var user_id = {'userID': sessionStorage.userID}
+var searchInput = $('#searchInput').val()
+var query = {
+    'search': searchInput,
+    'userID': sessionStorage.userID
+};
 
-$.get("api/all", user_id , function (data) {
-    allCards(data)
+$.get("api/search", query, function (data) {
+    serchCards(data)
 })
 
-function allCards(data){
+function serchCards(data) {
     const cardsInRow = 4
-    let Rows = Math.ceil(data.length/cardsInRow)
-    for (let i = 0; i < Rows; i++){
+    let Rows = Math.ceil(data.length / cardsInRow)
+    for (let i = 0; i < Rows; i++) {
         $('.container').append($('<div />', {
             id: `row-${i}`,
-            class: 'row equal' 
+            class: 'row equal'
         }))
-        for(let j= i * cardsInRow; j < (i * cardsInRow + cardsInRow) && j < data.length; j++){
+        for (let j = i * cardsInRow; j < (i * cardsInRow + cardsInRow) && j < data.length; j++) {
             var id_number = data[j]['id'];
             $(`#row-${i}`).append($('<div />', {
                 id: `col-${j}`,
@@ -22,7 +26,7 @@ function allCards(data){
                 id: `card-${id_number}`,
                 class: 'card'
             }))
-            $(`#card-${id_number}`).append($('<div />',{
+            $(`#card-${id_number}`).append($('<div />', {
                 id: `cardImg-${id_number}`,
                 class: 'card-img',
                 style: `background-image:url(${data[j]['Img']})`
@@ -55,3 +59,4 @@ function allCards(data){
     }
 }
 
+//# sourceURL=searchPage.js

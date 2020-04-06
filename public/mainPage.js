@@ -2,7 +2,6 @@ var exsits = false;
 var user_id = {'userID': sessionStorage.userID}
 
  $.get("api/all",user_id, function (data) {
-    $('#userName').text(sessionStorage.userName);
       const maxCard = 3
     for (var i = 0; i < data.length && i < maxCard; i++) {
         mainPageCards(i,data)
@@ -116,7 +115,7 @@ function mainPageCards(i, data){
     }))
     $(`#overContent-${id_number}`).append($('<a />', {
         class: 'hover',
-        href: 'oneRecipe.html' + '#' + id_number,
+        onclick: `onViewClick(${id_number})`,
         text: 'View'
     }))
     $(`#card-${id_number}`).append($('<div />', {

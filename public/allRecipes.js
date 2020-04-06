@@ -1,7 +1,6 @@
 var user_id = {'userID': sessionStorage.userID}
 
 $.get("api/all", user_id , function (data) {
-    $('#userName').text(sessionStorage.userName);
     allCards(data)
 })
 
@@ -42,7 +41,7 @@ function allCards(data){
             }))
             $(`#overContent-${id_number}`).append($('<a />', {
                 class: 'hover',
-                href: 'oneRecipe.html' + '#' + id_number,
+                onclick: `onViewClick(${id_number})`,
                 text: 'View'
             }))
             $(`#card-${id_number}`).append($('<div />', {

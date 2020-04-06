@@ -15,6 +15,8 @@ $('#Img').on('change',function(){
 $('#saveBtn').click(function() {
     IngredientsList()
     creatNewRecipe()
+ //   window.location.href = `./oneRecipe.html#${id}.html`;
+
 })
 
 function creatNewRecipe(){
@@ -25,7 +27,7 @@ function creatNewRecipe(){
         img =  (e.target.result).toString('base64')
         addCard = {
             userID: sessionStorage.userID,
-            id: '212',
+            id: '33',
             Name: $('#Name').val(),
             Description: $('#Description').val(),
             TimeHours: $('#Hours').val(),
@@ -34,9 +36,12 @@ function creatNewRecipe(){
             Preparation: $('#Preparation').val(),
             Img: img
         }
-        $.post('/api/add',addCard, function (){
+        $.post('/api/add',addCard, function (data,status){
             console.log(addCard)
-        })
+            console.log(status)
+           
+        }).done(function() { console.log(status) })
+        .fail(function(jqxhr, settings, ex) { alert('failed, ' + ex); });
 
     };
     reader.readAsDataURL(file);

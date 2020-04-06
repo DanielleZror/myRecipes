@@ -1,60 +1,37 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" type="text/css" href="mystyle.css">
+
 <head>
     <link rel="icon" href=".\logo.png">
     <link href="https://fonts.googleapis.com/css?family=Dokdo" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>myRecipes</title>
 </head>
-<body onload="disableSubmit()">
-    <header>
-        <nav class="navbar navbar-expand-md fixed-top navbar-dark" data-spy="affix">
-                <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-                    <a class="navbar-brand" href="mainPage.html">
-                        <img src=".\logo.png" width="55" height="55" class="d-inline-block align-top" alt="">
-                    </a>
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="mainPage.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="all.html">All my recipes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="add.html">Add</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a id="userName" class="nav-link disabled"></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="loginPage.html">logOut</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>     
-            
-    </header>
-    <div id="carousel" class="carousel slide" data-ride="carousel"></div>
-    <div class="card-deck"></div>
-    <div class="all-btn">
-        <a href="all.html"><button type="button" class="btn btn-outline-secondary">See all</button></a>
-    </div>
 
-  
-    <div class="footer">
+<body>
+    <div id="main">
+        <div id="carousel" class="carousel slide" data-ride="carousel"></div>
+        <div class="card-deck"></div>
+        <div class="all-btn">
+            <a href="all.html"><button type="button" class="btn btn-outline-secondary">See all</button></a>
+        </div>
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="./mainPage.js"></script>
-</body>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+        <script src="./mainPage.js"></script>
+   </body>
+
 </html>

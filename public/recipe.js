@@ -1,24 +1,23 @@
-var id_number = {'id': window.location.hash.substring(1)};
-var query = {'id': window.location.hash.substring(1), 'userID': sessionStorage.userID };
+var currHash = window.location.hash.substring(1);
+var query = { 'id': currHash.split('#')[1], 'userID': sessionStorage.userID };
 
 
-$.get("/api/byID",query, function (data) {
+$.get("/api/byID", query, function (data) {
     specipicRecipe(data)
 })
 
 
-function specipicRecipe(data){
-    $('#userName').text(sessionStorage.userName);
+function specipicRecipe(data) {
     $('.recipe-card').append($('<aside />', {
         id: `card-${data["id"]}`
     })).append($('<img />', {
         src: data["Img"],
         alt: data["Name"]
     }))
-    $('.recipe-card').append($('<article />',{
+    $('.recipe-card').append($('<article />', {
         id: 'article'
     }))
-    $("#article").append($('<h2 />',{
+    $("#article").append($('<h2 />', {
         id: 'title',
         text: data["Name"]
     }))
@@ -26,12 +25,12 @@ function specipicRecipe(data){
         id: 'titleSpan',
         class: 'mntl-sc-block-headling__text'
     }))
-    $("#article").append($('<h3 />',{
+    $("#article").append($('<h3 />', {
         id: 'text',
         text: data["Description"]
     }))
-    
-    $('#article').append($('<ul />',{
+
+    $('#article').append($('<ul />', {
         id: 'paragraf'
     }))
     $("#paragraf").append($('<li />', {
@@ -54,21 +53,22 @@ function specipicRecipe(data){
         class: 'preparation'
     }))
     $('.preparation').append($('<p> Preparation method: </p>'))
-    $('.preparation').append($('<span />',{
+    $('.preparation').append($('<span />', {
         id: 'preparation'
     }))
     $("#preparation").append(data["Preparation"])
 }
 
-function Ingredients(data){
-    for (let i = 0; i < data["Ingredients"].length ; i++){
+function Ingredients(data) {
+    for (let i = 0; i < data["Ingredients"].length; i++) {
         var ingredientsLineData = data["Ingredients"][i]["Amount"] + " " + data["Ingredients"][i]["Unit"] + " " + data["Ingredients"][i]["Item"]
         $(".ingredients").append($('<spanIng />', {
             id: 'ingredientsLineData',
             text: ingredientsLineData
         }))
-       
+
 
     }
 }
 
+//# sourceURL=recipe.js

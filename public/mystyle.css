@@ -208,6 +208,17 @@ header,
   justify-content: center;
 }
 
+#page-wrap { 
+  width: 500px; margin: 40px auto 5px; background: #91c7ff; 
+  padding: 8px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ccc));
+background: -moz-linear-gradient(top,  #eee,  #ccc);
+-webkit-border-radius: 16px;
+-moz-border-radius: 16px;
+}
+
+#main-content { padding: 14px; }
+
 /* navbar */
 .navbar{
     background-color: #343a40!important;

@@ -3,175 +3,159 @@
 <link rel="stylesheet" type="text/css" href="mystyle.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/solid.min.css" rel="stylesheet">
-<head>
-    <link rel="icon" href=".\logo.png">
-    <link href="https://fonts.googleapis.com/css?family=Dokdo" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>myRecipes</title>
-</head>
+
 <body>
-    <header>
-        <nav class='navbar navbar-expand-md fixed-top navbar-dark'>
-                <div class='navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2'>
-                    <a class='navbar-brand' href='mainPage.html'>
-                        <img src='.\logo.png' width='55' height='55' class='d-inline-block align-top' alt=''>
-                    </a>
-                    <ul class='navbar-nav mr-auto'>
-                        <li class='nav-item'>
-                            <a class='nav-link' href='mainPage.html'>Home</a>
-                        </li>
-                        <li class='nav-item'>
-                            <a class='nav-link' href='all.html'>All my recipes</a>
-                        </li>
-                        <li class='nav-item active'>
-                            <a class='nav-link' href='add.html'>Add</a>
-                        </li>
-                        <li class='nav-item'>
-                            <a class='nav-link' href='#'>Link</a>
-                        </li>
-                    </ul>
-                    <ul class='navbar-nav ml-auto'>
-                        <li class="nav-item">
-                          <a id="userName" class="nav-link disabled"></a>
-                        </li>
-                        <li class='nav-item'>
-                            <a id='logout' class='nav-link' href='loginPage.html'>logOut</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>     
-            
-    </header>
 
-<!-- Grid row -->
-<div class='row accordion-gradient-bcg d-flex justify-content-center'>
+  <div id="main">
+    <!-- Grid row -->
+    <div class='row accordion-gradient-bcg d-flex justify-content-center'>
 
-    <!-- Grid column -->
-    <div class='col-md-10 col-xl-6 py-5'>
-  
-      <!--Accordion wrapper-->
-      <div class='accordion md-accordion accordion-2' id='accordionWrapper' role='tablist'
-        aria-multiselectable='true'>
-  
-        <!-- Accordion card -->
-        <div class='card addcard'>
-  
-          <!-- Card header -->
-          <div class='card-header rgba-stylish-strong z-depth-1 mb-1' role='tab' id='heading1'>
-            <a data-toggle='collapse' data-parent='#accordionWrapper' href='#collapse1' aria-expanded='true'
-              aria-controls='collapse1'>
-              <h5 class='mb-0 white-text font-thin'>
-                Tell me about the new recipe! <i class='fas fa-angle-down rotate-icon'></i>
-              </h5>
-            </a>
-          </div>
-  
-          <!-- Card body -->
-          <div id='collapse1' class='collapse show' role='tabpanel' aria-labelledby='heading1' data-parent='#accordionWrapper'>
-            <div class='card-body mb-1'>
-                <form>
-                    <input type='text' class='form-control mb-2 mr-sm-2' id='Name' placeholder="The recipe's name">
-                    <textarea type='text' class='form-control mb-2 mr-sm-2' id='Description' placeholder='Write a short description'></textarea> </textarea>
-                    <div class='form-row'>
-                        <div class='form-group col-md-4'>  
-                          <input id='Hours' name='h' type='number' class='form-control mb-2 mr-sm-2' min='0' max='24' placeholder='Hours'>
-                        </div>
-                        <div class='form-group col-md-4'>
-                          <input id='Minutes' name='m' type='number' class='form-control mb-2 mr-sm-2' min='0' max='59' placeholder='Minutes'>
-                        </div>
-                      </div>
-                    <div class='custom-file' id='myfile'>
-                        <input type='file' class='form-control custom-file-input' accept='image/*' id='Img' >
-                        <label class='custom-file-label' id= 'photo' for='Img' s>Choose a photo</label>
-                      </div>
+      <!-- Grid column -->
+      <div class='col-md-10 col-xl-6 py-5'>
+
+        <!--Accordion wrapper-->
+        <div class='accordion md-accordion accordion-2' id='accordionWrapper' role='tablist'
+          aria-multiselectable='true'>
+
+          <!-- Accordion card -->
+          <div class='card addcard'>
+
+            <!-- Card header -->
+            <div class='card-header rgba-stylish-strong z-depth-1 mb-1' role='tab' id='heading1'>
+              <a data-toggle='collapse' data-parent='#accordionWrapper' href='#collapse1' aria-expanded='true'
+                aria-controls='collapse1'>
+                <h5 class='mb-0 white-text font-thin'>
+                  Tell me about the new recipe! <i class='fas fa-angle-down rotate-icon'></i>
+                </h5>
+              </a>
+            </div>
+
+            <!-- Card body -->
+            <div id='collapse1' class='collapse show' role='tabpanel' aria-labelledby='heading1'
+              data-parent='#accordionWrapper'>
+              <div class='card-body mb-1'>
+                <form class='bootstrap-form needs-validation' novalidate>
+                  <input type='text' class='form-control mb-2 mr-sm-2' id='Name' placeholder="The recipe's name"
+                    required>
+                  <div class="invalid-feedback">
+                    not a name
+                  </div>
+                  <textarea type='text' class='form-control mb-2 mr-sm-2' id='Description'
+                    placeholder='Write a short description' required></textarea> </textarea>
+                  <div class='form-row'>
+                    <div class='form-group col-md-4'>
+                      <input id='Hours' name='h' type='number' class='form-control mb-2 mr-sm-2' min='0' max='24'
+                        placeholder='Hours' required>
+                    </div>
+                    <div class='form-group col-md-4'>
+                      <input id='Minutes' name='m' type='number' class='form-control mb-2 mr-sm-2' min='0' max='59'
+                        placeholder='Minutes' required>
+                    </div>
+                  </div>
+                  <div class='custom-file' id='myfile'>
+                    <input type='file' class='form-control custom-file-input' accept='image/*' id='Img' required>
+                    <label class='custom-file-label' id='photo' for='Img' s>Choose a photo</label>
+                  </div>
                 </form>
+              </div>
             </div>
           </div>
-        </div>
-        
-  
-        <!-- Accordion card -->
-        <div class='card addcard'>
-  
-          <!-- Card header -->
-          <div class='card-header rgba-stylish-strong z-depth-1 mb-1' role='tab' id='heading2'>
-            <a class='collapsed' data-toggle='collapse' data-parent='#accordionWrapper' href='#collapse2'
-              aria-expanded='false' aria-controls='collapse2'>
-              <h5 class='mb-0 white-text font-thin'>
-                Ingredients <i class='fas fa-angle-down rotate-icon'></i>
-              </h5>
-            </a>
-          </div>
-  
-          <!-- Card body -->
-          <div id='collapse2' class='collapse' role='tabpanel' aria-labelledby='heading2' data-parent='#accordionWrapper'>
-            <div class='card-body mb-1 rgba-grey-light white-text'>
-              <form method="post" action="">
-                <div class="row">
+
+
+          <!-- Accordion card -->
+          <div class='card addcard'>
+
+            <!-- Card header -->
+            <div class='card-header rgba-stylish-strong z-depth-1 mb-1' role='tab' id='heading2'>
+              <a class='collapsed' data-toggle='collapse' data-parent='#accordionWrapper' href='#collapse2'
+                aria-expanded='false' aria-controls='collapse2'>
+                <h5 class='mb-0 white-text font-thin'>
+                  Ingredients <i class='fas fa-angle-down rotate-icon'></i>
+                </h5>
+              </a>
+            </div>
+
+            <!-- Card body -->
+            <div id='collapse2' class='collapse' role='tabpanel' aria-labelledby='heading2'
+              data-parent='#accordionWrapper'>
+              <div class='card-body mb-1 rgba-grey-light white-text'>
+                <form method="post" action="">
+                  <div class="row">
                     <div class="col-lg-12">
-                        <div id="inputFormRow" >
-                            <div class="input-group mb-3 group " id="group-0">
-                                <input type="number" id="amount-0" class="form-control m-input" placeholder="Amount" autocomplete="off" step="0.25" min="0" max="1000">
-                                <input type="text" id="unit-0" class="form-control m-input" placeholder="Unit" autocomplete="off">
-                                <input type="text" id="item-0" class="form-control m-input" placeholder="Item" autocomplete="off">
-                                <div class="input-group-append">
-                                    <button id="removeRow" type="button" class="btn btn-danger remove">Remove</button>
-                                </div>
-                            </div>
+                      <div id="inputFormRow">
+                        <div class="input-group mb-3 group " id="group-0">
+                          <input type="number" id="amount-0" class="form-control m-input" placeholder="Amount"
+                            autocomplete="off" step="0.25" min="0" max="1000" required>
+                          <input type="text" id="unit-0" class="form-control m-input" placeholder="Unit"
+                            autocomplete="off" required>
+                          <input type="text" id="item-0" class="form-control m-input" placeholder="Item"
+                            autocomplete="off" required>
+                          <div class="input-group-append">
+                            <button id="removeRow" type="button" class="btn btn-danger remove">Remove</button>
+                          </div>
                         </div>
-            
-                        <div id="addBtn" class="btninCenter">
-                          <button id="addRow" type="button" class="btn btn-outline-secondary">Add Row</button>
-                        </div>    
-                    </div>
-                </div>
-            </form>
-            </div>
-          </div>
-        </div>
-        
-  
-        <!-- Accordion card -->
-        <div class='card addcard'>
-  
-          <!-- Card header -->
-          <div class='card-header rgba-stylish-strong z-depth-1 mb-1' role='tab' id='heading3'>
-            <a class='collapsed' data-toggle='collapse' data-parent='#accordionWrapper' href='#collapse3'
-              aria-expanded='false' aria-controls='collapse3'>
-              <h5 class='mb-0 white-text font-thin'>
-                Preparation method <i class='fas fa-angle-down rotate-icon'></i>
-              </h5>
-            </a>
-          </div>
-  
-          <!-- Card body -->
-          <div id='collapse3' class='collapse' role='tabpanel' aria-labelledby='heading3' data-parent='#accordionWrapper'>
-            <div class='card-body mb-1'>
-                <form>
-                    <textarea type='text' class='form-control mb-2 mr-sm-2' id='Preparation' placeholder='Write the preparation method' rows='6'></textarea> </textarea>
-                    <div class='save-btn'>
-                        <button id='saveBtn' type='button' class='btn btn-outline-secondary'><span class="far fa-save fa-lg mr-3"></span>Save</button></a>
-                    </div>
-                </form>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-      <!--/.Accordion wrapper-->
-      
-    </div>
-    <!-- Grid column -->
-  
-  </div>
-  <!-- Grid row -->
+                      </div>
 
-<div class='footer'>
-</div>
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="./add.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+                      <div id="addBtn" class="btninCenter">
+                        <button id="addRow" type="button" class="btn btn-outline-secondary">Add Row</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Accordion card -->
+          <div class='card addcard'>
+
+            <!-- Card header -->
+            <div class='card-header rgba-stylish-strong z-depth-1 mb-1' role='tab' id='heading3'>
+              <a class='collapsed' data-toggle='collapse' data-parent='#accordionWrapper' href='#collapse3'
+                aria-expanded='false' aria-controls='collapse3'>
+                <h5 class='mb-0 white-text font-thin'>
+                  Preparation method <i class='fas fa-angle-down rotate-icon'></i>
+                </h5>
+              </a>
+            </div>
+
+            <!-- Card body -->
+            <div id='collapse3' class='collapse' role='tabpanel' aria-labelledby='heading3'
+              data-parent='#accordionWrapper'>
+              <div class='card-body mb-1'>
+                <form>
+                  <textarea type='text' class='form-control mb-2 mr-sm-2' id='Preparation'
+                    placeholder='Write the preparation method' rows='6' required></textarea> </textarea>
+                  <div class='save-btn'>
+                    <button id='saveBtn' type='button' class='btn btn-outline-secondary'><span
+                        class="far fa-save fa-lg mr-3"></span>Save</button></a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!--/.Accordion wrapper-->
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="./add.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

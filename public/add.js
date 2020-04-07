@@ -1,6 +1,7 @@
 var addCard = {}
 var Ingredients = []
 let counterLines = 1
+var insertId
 
 $('#userName').text(sessionStorage.userName);
 
@@ -15,8 +16,6 @@ $('#Img').on('change', function () {
 $('#saveBtn').click(function () {
     IngredientsList()
     creatNewRecipe()
-    showRecipePage('33')
-
 })
 
 
@@ -43,7 +42,6 @@ function creatNewRecipe() {
         img = (e.target.result).toString('base64')
         addCard = {
             userID: sessionStorage.userID,
-            id: '33',
             Name: $('#Name').val(),
             Description: $('#Description').val(),
             TimeHours: $('#Hours').val(),
@@ -55,8 +53,9 @@ function creatNewRecipe() {
         $.post('/api/add', addCard, function (data, status) {
             console.log(addCard)
             console.log(status)
+            insertId = data
 
-        }).done(function () { console.log(status) })
+        }).done(function () { console.log(status); showRecipePage(insertId) })
             .fail(function (jqxhr, settings, ex) { alert('failed, ' + ex); });
 
     };

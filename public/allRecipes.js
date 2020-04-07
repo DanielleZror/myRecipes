@@ -13,7 +13,7 @@ function allCards(data){
             class: 'row equal' 
         }))
         for(let j= i * cardsInRow; j < (i * cardsInRow + cardsInRow) && j < data.length; j++){
-            var id_number = data[j]['id'];
+            var id_number = data[j]['_id'];
             $(`#row-${i}`).append($('<div />', {
                 id: `col-${j}`,
                 class: 'col-sm-3 d-flex pb-3'
@@ -37,7 +37,7 @@ function allCards(data){
             }))
             $(`#overContent-${id_number}`).append($('<a />', {
                 class: 'hover',
-                onclick: `showRecipePage(${id_number})`,
+                onclick: `showRecipePage("${id_number}")`,
                 text: 'View'
             }))
             $(`#card-${id_number}`).append($('<div />', {

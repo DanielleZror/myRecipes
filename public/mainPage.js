@@ -91,7 +91,7 @@ function carouselInner(j, data){
 
 
 function mainPageCards(i, data){
-    var id_number = data[i]['id'];
+    var id_number = data[i]['_id'];
     $('.card-deck').append($('<div />', {
         id: `card-${id_number}`,
         class: 'card mainCard' 
@@ -112,7 +112,7 @@ function mainPageCards(i, data){
     }))
     $(`#overContent-${id_number}`).append($('<a />', {
         class: 'hover',
-        onclick: `showRecipePage(${id_number})`,
+        onclick: `showRecipePage("${id_number}")`,
         text: 'View'
     }))
     $(`#card-${id_number}`).append($('<div />', {
@@ -136,3 +136,5 @@ function disableSubmit(){
         window.location.href = 'loadingPage.html'
     }
 }
+
+//# sourceURL=mainPage.js

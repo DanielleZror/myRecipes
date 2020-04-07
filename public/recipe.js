@@ -9,7 +9,7 @@ $.get("/api/byID", query, function (data) {
 
 function specipicRecipe(data) {
     $('.recipe-card').append($('<aside />', {
-        id: `card-${data["id"]}`
+        id: `card-${data["_id"]}`
     })).append($('<img />', {
         src: data["Img"],
         alt: data["Name"]

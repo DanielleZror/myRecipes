@@ -5,8 +5,10 @@ var path = require('path');
 var MongoClient = require('mongodb').MongoClient;
 var uri = 'mongodb://localhost:27017/recipes';
 const assert = require('assert');
+//ObjectID = require('mongodb').ObjectID; 
 const fs = require('fs');
 let mydb
+const {ObjectId} = require('mongodb'); 
 const apiKey = 'AIzaSyDwEjpZAX4FpLlsPEQbu7QxTPbwOSBmxVU'
 const clientId = '328129129619-hb9ssc9ajkdqrfr82dsmtn27jhkjrqdj.apps.googleusercontent.com'
 
@@ -44,8 +46,6 @@ app.get('/api/all', function (req, res) {
 app.get('/api/search', function (req, res) {
 
     var regex = new RegExp("." + req.query.search + ".");
-
-
     var query = {
         $and: [
             {
@@ -68,7 +68,7 @@ app.get('/api/search', function (req, res) {
 })
 
 app.get('/api/byID', function (req, res) {
-    var query = { id: req.query.id, userID: req.query.userID };
+    var query = { _id: ObjectId( req.query.id), userID: req.query.userID };
     selectFromDB(sendRes, query);
     function sendRes(result) {
         res.send(result[0]);
@@ -77,7 +77,8 @@ app.get('/api/byID', function (req, res) {
 
 app.post('/api/add', function (req, res) {
     addToDB(sendRes, req.body)
-    function sendRes() {
+    function sendRes(insertID) {
+        res.send(insertID)
         res.status(200).end()
     }
 
@@ -121,8 +122,8 @@ function addToDB(callback, document) {
     function insert(collection) {
         collection.insertOne(document, function (err, result) {
             if (err) throw err;
-            console.log(result)
-            callback()
+            console.log(result.insertedId.toString())
+            callback(result.insertedId.toString())
             closeConnction()
         })
     }

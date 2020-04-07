@@ -40,6 +40,16 @@ $("#searchInput").on("keydown", function (event) {
 });
 
 $('#logout').click(function () {
-    sessionStorage.removeItem("userConnect");
+    sessionStorage.clear()
+    window.location.href = "loginPage.html";
 });
+
+function disableSubmit(){
+    if(sessionStorage.userConnect != "true"){
+        window.location.href = "/loginPage.html";
+    } else {
+        window.location.hash = 'mainPage.html'
+    }
+}
+
 

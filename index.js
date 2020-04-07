@@ -7,6 +7,9 @@ var uri = 'mongodb://localhost:27017/recipes';
 const assert = require('assert');
 const fs = require('fs');
 let mydb
+const apiKey = 'AIzaSyDwEjpZAX4FpLlsPEQbu7QxTPbwOSBmxVU'
+const clientId = '328129129619-hb9ssc9ajkdqrfr82dsmtn27jhkjrqdj.apps.googleusercontent.com'
+
 
 app.use(express.static('public'))
 app.use(bodyParser.json());
@@ -21,6 +24,14 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/public/mainPage.html'));
 });
 
+app.get('/api/apiKey', function (req, res) {
+    res.send(apiKey);
+})
+
+app.get('/api/clientId', function (req, res) {
+    res.send(clientId);
+})
+
 app.get('/api/all', function (req, res) {
     var query = { userID: req.query.userID };
     selectFromDB(sendRes, query);
@@ -31,21 +42,22 @@ app.get('/api/all', function (req, res) {
 })
 
 app.get('/api/search', function (req, res) {
-  
+
     var regex = new RegExp("." + req.query.search + ".");
 
 
-    var query = {$and: [
-        {
-            $or: [
-            {Description: regex},
-            {Item: regex},
-            {Name: regex},
-            {Preparation: regex}
-                ] 
-        },
-        {userID: req.query.userID}
-    ]
+    var query = {
+        $and: [
+            {
+                $or: [
+                    { Description: regex },
+                    { Item: regex },
+                    { Name: regex },
+                    { Preparation: regex }
+                ]
+            },
+            { userID: req.query.userID }
+        ]
     }
 
     selectFromDB(sendRes, query);
@@ -115,6 +127,8 @@ function addToDB(callback, document) {
         })
     }
 }
+
+
 
 
 

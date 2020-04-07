@@ -59,4 +59,11 @@ function serchCards(data) {
     }
 }
 
+function disableSubmit(){
+    if(sessionStorage.userConnect != "true"){
+        window.location.href = "/loginPage.html";
+    } else {
+        window.location.href = 'loadingPage.html'
+    }
+}
 //# sourceURL=searchPage.js

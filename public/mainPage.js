@@ -11,9 +11,6 @@ var user_id = {'userID': sessionStorage.userID}
     }
 })
 
-$('#logout').click(function () {
-    sessionStorage.removeItem("userConnect");
-});
 
 function carousel(j, data){
     $('#carousel').append($('<ol />,', {
@@ -133,8 +130,9 @@ function mainPageCards(i, data){
 }
 
 function disableSubmit(){
-    //gapi.auth2.getAuthInstance().isSignedIn.get()
     if(sessionStorage.userConnect != "true"){
         window.location.href = "/loginPage.html";
+    } else {
+        window.location.href = 'loadingPage.html'
     }
 }

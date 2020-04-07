@@ -4,7 +4,7 @@ let counterLines = 1
 
 $('#userName').text(sessionStorage.userName);
 
-$('#Img').on('change',function(){
+$('#Img').on('change', function () {
     //get the file name
     var fileName = $('#Img')[0].files[0].name;
 
@@ -12,19 +12,35 @@ $('#Img').on('change',function(){
     $('#photo').text(fileName);
 })
 
-$('#saveBtn').click(function() {
+$('#saveBtn').click(function () {
     IngredientsList()
     creatNewRecipe()
     showRecipePage('33')
 
 })
 
-function creatNewRecipe(){
+
+//let NameInput = $('#Name')[0];
+
+// $('#Name').on("keyup", function (event) {
+
+//         console.log(NameInput)
+//         NameInput = NameInput.checkValidity();
+//         if ( isValidEmail ) {
+//             console.log(false) ;
+//           } else {
+//             console.log(true);
+//           }
+
+// });
+
+
+function creatNewRecipe() {
     var file = $('#Img')[0].files[0];
     var reader = new FileReader();
     var img;
     reader.onload = function (e) {
-        img =  (e.target.result).toString('base64')
+        img = (e.target.result).toString('base64')
         addCard = {
             userID: sessionStorage.userID,
             id: '33',
@@ -36,22 +52,22 @@ function creatNewRecipe(){
             Preparation: $('#Preparation').val(),
             Img: img
         }
-        $.post('/api/add',addCard, function (data,status){
+        $.post('/api/add', addCard, function (data, status) {
             console.log(addCard)
             console.log(status)
-           
-        }).done(function() { console.log(status) })
-        .fail(function(jqxhr, settings, ex) { alert('failed, ' + ex); });
+
+        }).done(function () { console.log(status) })
+            .fail(function (jqxhr, settings, ex) { alert('failed, ' + ex); });
 
     };
     reader.readAsDataURL(file);
 }
 
-function IngredientsList(){
+function IngredientsList() {
     var matched = $(".group")
     var rowIndex
-    for (let i = 0; i < matched.length ; i++){
-        rowIndex = matched[i].id.split('-')[1] 
+    for (let i = 0; i < matched.length; i++) {
+        rowIndex = matched[i].id.split('-')[1]
         Ingredients.push({
             Amount: $(`#amount-${rowIndex}`).val(),
             Unit: $(`#unit-${rowIndex}`).val(),
@@ -71,24 +87,24 @@ $("#addRow").click(function () {
         type: 'number',
         id: `amount-${counterLines}`,
         class: 'form-control m-input',
-        placeholder: 'Amount', 
+        placeholder: 'Amount',
         autocomplete: 'off',
         step: '0.25',
-        min: '0', 
+        min: '0',
         max: '1000'
     }))
     $(`#group-${counterLines}`).append($('<input />', {
         type: 'text',
         id: `unit-${counterLines}`,
         class: 'form-control m-input',
-        placeholder: 'Unit', 
+        placeholder: 'Unit',
         autocomplete: 'off'
     }))
     $(`#group-${counterLines}`).append($('<input />', {
         type: 'text',
         id: `item-${counterLines}`,
         class: 'form-control m-input',
-        placeholder: 'Item', 
+        placeholder: 'Item',
         autocomplete: 'off'
     }))
     $(`#group-${counterLines}`).append($('<div />', {
@@ -104,9 +120,16 @@ $("#addRow").click(function () {
     counterLines++
 });
 
-    // remove row
-    $(document).on('click', '.remove', function () {
-        $(this).parents('.group').remove();
-    });
+// remove row
+$(document).on('click', '.remove', function () {
+    $(this).parents('.group').remove();
+});
 
+function disableSubmit() {
+    if (sessionStorage.userConnect != "true") {
+        window.location.href = "/loginPage.html";
+    } else {
+        window.location.href = 'loadingPage.html'
+    }
+}
 //# sourceURL=add.js

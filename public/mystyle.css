@@ -184,6 +184,9 @@ html,
   border-radius: 20px !important;
 }
 
+.btn:hover{
+  background: #CB8EB2
+}
 /* all recipies btn*/
 .all-btn{
     align-items: center;

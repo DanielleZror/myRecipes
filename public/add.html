@@ -7,7 +7,7 @@
 <body onload="disableSubmit()">
 
   <div id="main">
-    <!-- Grid row -->
+    <form>   <!-- Grid row -->
     <div class='row accordion-gradient-bcg d-flex justify-content-center'>
 
       <!-- Grid column -->
@@ -34,11 +34,11 @@
             <div id='collapse1' class='collapse show' role='tabpanel' aria-labelledby='heading1'
               data-parent='#accordionWrapper'>
               <div class='card-body mb-1'>
-                <form class='bootstrap-form' novalidate>
+                <form class='bootstrap-form'>
                   <input type='text' class='form-control mb-2 mr-sm-2' id='Name' placeholder="The recipe's name"
                     required>
                   <textarea type='text' class='form-control mb-2 mr-sm-2' id='Description'
-                    placeholder='Write a short description' required></textarea> </textarea>
+                    placeholder='Write a short description' required></textarea> 
                   <div class='form-row'>
                     <div class='form-group col-md-4'>
                       <input id='Hours' name='h' type='number' class='form-control mb-2 mr-sm-2' min='0' max='24'
@@ -125,7 +125,7 @@
                   <textarea type='text' class='form-control mb-2 mr-sm-2' id='Preparation'
                     placeholder='Write the preparation method' rows='6' required></textarea> </textarea>
                   <div class='save-btn'>
-                    <button id='saveBtn' type='button' class='btn btn-outline-secondary'>
+                    <button id='saveBtn' type='button' class='btn'>
                       <i class="far fa-save fa-lg mr-3"></i>Save</button>
                   </div>
                 </form>
@@ -141,7 +141,8 @@
 
     </div>
     <!-- Grid row -->
-
+  </form>
+ 
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"

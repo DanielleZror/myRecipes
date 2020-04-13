@@ -32,6 +32,10 @@ function showRecipePage(numberId) {
     window.location.hash = 'oneRecipe.html' + '#' + numberId;
 }
 
+function showAllRecipesPage() {
+    window.location.hash = 'all.html';
+}
+
 $("#searchInput").on("keydown", function (event) {
     if (event.which == 13) {
         console.log($('#searchInput').val())

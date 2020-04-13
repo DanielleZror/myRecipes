@@ -10,7 +10,9 @@ var user_id = {'userID': sessionStorage.userID}
         carousel(j,data)
     }
 })
-
+$('#allBtn').click(function () {
+    showAllRecipesPage()
+})
 
 function carousel(j, data){
     $('#carousel').append($('<ol />,', {

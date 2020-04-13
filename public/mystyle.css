@@ -1,23 +1,10 @@
 
-
-:root {
-    --carousel-height: 300px;
-    --headlinesFont: 'Josefin Sans', sans-serif;
-    --bodyFont: 'Work Sans', sans-serif;
-    --wildWatermelon: #ff4f87;
-    --fuelYellow: #f0a035;
-    --textColor: #323232;
-    --bodyBg: #d6d6d6;
-    --white: #fff;
-    --black: #000;
-}
-
  header{
   padding: 2em;
 } 
 
 body {
-    background-color: rgb(210, 224, 241) !important;
+    background-color: rgb(77, 21, 54, 0.6) !important;
     display: grid;
     font-family: 'Quicksand', sans-serif;
 }
@@ -58,7 +45,7 @@ header,
   width: 170px;
   top: -75px;
   border-radius: 50%;
-  background: #343a40;
+  background: #2C272A;
   padding: 10px;
   text-align: center;
 }
@@ -90,6 +77,11 @@ header,
 }
 
 /* cards */
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .card-deck{
     padding: 75px;
     width:100%;
@@ -108,7 +100,7 @@ header,
 .card {
   width: 15em;
   display: inline-block;
-  margin: em;
+  margin: 10px;
   border-radius: 4px;
   box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   transition: all .2s ease;
@@ -183,8 +175,15 @@ header,
   text-decoration: none;
 }
 .card-img .overlay .overlay-content a:hover, .card-img .overlay .overlay-content a.hover {
-  background: #e1b3eb;
-  border-color: #e1b3eb;
+  background: #7C3B61;
+  border-color: #CB8EB2;
+}
+
+.btn{
+  background: #7C3B61;
+  border-color: #CB8EB2 !important;
+  color: white !important;
+  border-radius: 20px !important;
 }
 
 /* all recipies btn*/
@@ -192,7 +191,7 @@ header,
     align-items: center;
     display: flex;
     justify-content: center;
-    padding-bottom: 80px;
+    padding-bottom: 80px; 
 }
 
 /* save recipies btn*/
@@ -221,7 +220,7 @@ background: -moz-linear-gradient(top,  #eee,  #ccc);
 
 /* navbar */
 .navbar{
-    background-color: #343a40!important;
+    background-color: #2C272A!important;
     border-radius: 0;
     padding: 0px !important;
 }
@@ -231,11 +230,6 @@ background: -moz-linear-gradient(top,  #eee,  #ccc);
     z-index: 9999 !important;
   }
 
-
-* {
-    box-sizing: border-box;
-  }
-  
   
 .footer {
     position: fixed;
@@ -243,7 +237,8 @@ background: -moz-linear-gradient(top,  #eee,  #ccc);
     width: 100%;
     height: 2em;
     line-height: 60px; 
-    background-color: #343a40;
+    background-color: #2C272A;
+    margin-top: 10px;
 }
 
 
@@ -305,7 +300,7 @@ img {
       font-family:  'Comic Neue', cursive !important;
     }
 
-    spanIng{
+    spanImg{
       display: block;
       margin-left: 0.5em;
       font-size: 1em;
@@ -340,6 +335,7 @@ img {
     
     h4, h5 {
       font-family: 'Comic Neue', cursive !important;
+      color: #2C272A;
     }
 
     p {

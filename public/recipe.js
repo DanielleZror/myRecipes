@@ -62,7 +62,7 @@ function specipicRecipe(data) {
 function Ingredients(data) {
     for (let i = 0; i < data["Ingredients"].length; i++) {
         var ingredientsLineData = data["Ingredients"][i]["Amount"] + " " + data["Ingredients"][i]["Unit"] + " " + data["Ingredients"][i]["Item"]
-        $(".ingredients").append($('<spanIng />', {
+        $(".ingredients").append($('<spanImg />', {
             id: 'ingredientsLineData',
             text: ingredientsLineData
         }))
